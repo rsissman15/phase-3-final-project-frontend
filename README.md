@@ -1,5 +1,5 @@
 # Flex Phase 3 Build 3 Frontend
-This is a frontend application for a task planner app. The objective of this is to showcase what I did for Flatiron School
+This is a frontend application for a meal planner app. The objective of this is to showcase what I did for Flatiron School
 
 ### Requirments
 * node version 14.17.5
