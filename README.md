@@ -10,7 +10,7 @@ This is a frontend application for a job app. The objective of this is to showca
 Fork and Clone
 Run yarn install
 Run yarn start
-Follow directions for backend (url here)
+Follow directions for backend https://github.com/rsissman15/phase-3-sinatra-react-project
 
 ### Licensing (MIT,Optional)
 Copyright <YEAR> <COPYRIGHT HOLDER>
