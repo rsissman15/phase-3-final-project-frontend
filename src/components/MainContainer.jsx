@@ -10,12 +10,14 @@ import React,{useState,useEffect} from 'react'
 const MainContainer= ()=>{
 
     const [jobs,setJobs]=useState([])
+
+    console.log(jobs)
     const [companies,setCompanies]=useState([])
     
     
 
     useEffect(()=>{
-        fetch("http://localhost:9292/jobsandcompanies")
+        fetch("http://localhost:9292/jobs")
         .then(res=>res.json())
         .then(data=>setJobs(data))
     },[])
@@ -45,20 +47,18 @@ const MainContainer= ()=>{
     }
 
     function handleInterviewRound(job) {
-        const info={'interview_round': job.interview_round + 1, 'test':"test"}
-        console.log(info)
         
         fetch(`http://localhost:9292/jobs/${job.id}`, {
           method: 'PATCH',
-          header: {"Content-Type":"application/json"},
-          body: JSON.stringify(info),
-        }).then(() =>{
-            console.log(job)
+          headers: {"Content-Type":"application/json"},
+          body: JSON.stringify({'interview_round': job.interview_round + 1}),
+        }).then(() =>
           setJobs(
             jobs.map((oldJob) =>
               oldJob.id !== job.id ? oldJob : { ...oldJob, interview_round: oldJob.interview_round + 1 }
             )
-          )}
+          )
+          
         );
       }
 
